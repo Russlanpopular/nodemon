@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	.container.mt50
+		h1 Новости
+		form(role="form" action="/news" method="post").form-inline
+			.form-group
+				label(for="site") Выберите сайт: 
+				select.form-control#site
+					option(value="habrhabr") habrhabr
+					option(value="mailru") mail.ru
+			.form-group.castom-form-group
+				label(for="how") Выберите количество новостей: 
+				input(type="range" min="2" max="20" name="how_many" step="2" value="6" oninput="onchangeWidth()")#how
+				span#how_many 6
+			button(type="submit" class="btn btn-success") Прочитать	
+		-if(news){
+		- for(var i = 0; i < news.length; i++){
+			p(role="alert").alert.alert-info 
+				news= news[i]
+		- }
+		-}	
+
+
+		.progress
+			div(role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%").progress-bar.progress-bar-striped.active
+				span.sr-only 85% Complete
+		

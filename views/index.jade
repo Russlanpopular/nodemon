@@ -1,20 +1,11 @@
 extends layout
 
 block content
-	nav.navbar.navbar-default
-		.container-fluid
-			.navbar-header
-				button(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false").navbar-toggle.collapsed
-					span.sr-only Toggle navigation
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
-				a(href='#').navbar-brand Logo
-
-
-	.container
-		h1 Jade - node template engine
-		p Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Толку не предупреждал имеет первую от всех предупредила снова необходимыми? За возвращайся послушавшись океана текстами что, грамматики решила коварный предупреждал букв.
-		div.img
-			img(src="images/bleat.jpg")
-		a(href='/users') Users
+	.homepage-hero-module
+		.video-container
+			.filter
+			video(autoplay loop).fillWidth
+				source(src="/video/mp4/For_Wes.mp4" type="video/mp4")
+				source(src="/video/WEBM/For_Wes.webm" type="video/webm")
+			.poster
+				img(src="/video/Snapshots/For_Wes.jpg")
